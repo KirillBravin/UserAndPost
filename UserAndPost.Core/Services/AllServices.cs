@@ -11,58 +11,58 @@ namespace UserAndPost.Core.Services
 {
     public class AllServices : IService
     {
-        private readonly IUserRepository _userRepository;
-        private readonly IPostServices _postServices;
+        public IUserServices UserServices { get; private set; }
+        public IPostServices PostServices { get; private set; }
 
         private List<Post> allPosts = new List<Post>();
 
-        public AllServices(IUserRepository userRepository, IPostServices postServices)
+        public AllServices(IUserServices userServices, IPostServices postServices)
         {
-            _userRepository = userRepository;
-            _postServices = postServices;
+            UserServices = userServices;
+            PostServices = postServices;
         }
 
         // Users
         public void AddUser(User user)
         {
-            _userRepository.AddUser(user);
+            UserServices.AddUser(user);
         }
 
         public void DeleteUser(int id)
         {
-            _userRepository.DeleteUser(id);
+            UserServices.DeleteUser(id);
         }
 
         public List<User> GetAllUsers()
         {
-            return _userRepository.GetAllUsers();
+            return UserServices.GetAllUsers();
         }
 
         public void ModifyUser(User user)
         {
-            _userRepository.ModifyUser(user);
+            UserServices.ModifyUser(user);
         }
 
         // Posts
 
         public void AddPost(Post post)
         {
-            _postServices.AddPost(post);
+            PostServices.AddPost(post);
         }
 
         public void DeletePost(int id)
         {
-            _postServices.DeletePost(id);
+            PostServices.DeletePost(id);
         }
 
         public List<Post> GetAllPosts()
         {
-            return _postServices.GetAllPosts();
+            return PostServices.GetAllPosts();
         }
 
         public void ModifyPost(Post post)
         {
-            _postServices.ModifyPost(post);
+            PostServices.ModifyPost(post);
         }
     }
 }

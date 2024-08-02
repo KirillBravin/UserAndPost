@@ -9,7 +9,7 @@ namespace UserAndPost.Core.Interface
 {
     public interface IService
     {
-        IUserServices Services { get; }
+        IUserServices UserServices { get; }
         IPostServices PostServices { get; }
     }
 }

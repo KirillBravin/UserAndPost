@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UserAndPost.Core.Interface;
-using UserAndPost.Core.Interfaces;
 using UserAndPost.Core.Models;
 
 namespace UserAndPost.Core.Services

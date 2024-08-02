@@ -19,7 +19,13 @@ namespace UserAndPost.Core.Models
             Email = email;
         }
 
-        public User() { };
+        public User(string name, string email)
+        {
+            Name = name;
+            Email = email;
+        }
+
+        public User () { }
 
         public override string ToString()
         {
